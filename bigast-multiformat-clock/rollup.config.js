@@ -21,12 +21,6 @@ export default [
       format: "esm",
       intro: `const ${workaround_some_browser_detector}, ${workaround_jsonld_module_system_picker};`,
     },
-    // external: [
-    //   "lit-element",
-    //   "streamed-graph",
-    //   "n3",
-    //   "@polymer/polymer/lib/elements/dom-bind.js",
-    // ],
     plugins: [
       builtins(),
       resolve({
