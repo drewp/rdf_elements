@@ -1,6 +1,8 @@
 {
-  "name": "rdf_elements",
+  "name": "bigast-multiformat-clock",
   "version": "0.0.1",
+  "types": "build/index.d.ts",
+  "module": "build/lib.bundle",
   "scripts": {
     "build": "rollup -c",
     "build_forever": "rollup -cw",

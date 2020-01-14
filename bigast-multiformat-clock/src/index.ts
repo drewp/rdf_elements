@@ -6,8 +6,6 @@ import { DataFactory } from "n3";
 const { namedNode } = DataFactory;
 
 import { DomBind } from "@polymer/polymer/lib/elements/dom-bind.js";
-// for the web page
-export { DomBind } from "@polymer/polymer/lib/elements/dom-bind.js";
 
 @customElement("bigast-multiformat-clock")
 export class BigastMultiformatClock extends LitElement {
@@ -74,6 +72,10 @@ export class BigastMultiformatClock extends LitElement {
     if (this.format == "timeOfDay") {
       return html`
         ${this.room_localTimeToSecond}
+      `;
+    } else if (this.format == "dayOfWeek") {
+      return html`
+        ${this.room_localDayOfWeek}
       `;
     } else {
       return html`
