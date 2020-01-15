@@ -12,6 +12,9 @@ export class BigastMultiformatClock extends LitElement {
   @property({ type: Object })
   graph!: VersionedGraph;
 
+  // this has got to go
+  @property({ type: String }) graphSelector: string = "streamed-graph";
+
   @property({ type: String })
   format: string | undefined;
 
@@ -22,10 +25,13 @@ export class BigastMultiformatClock extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    const dombind = this.parentElement!.querySelector(
-      "streamed-graph#envGraph"
-    ) as DomBind;
-    (dombind.addEventListener as any)(
+    const graphEl = this.parentElement!.ownerDocument!.querySelector(
+      this.graphSelector
+    );
+    if (!graphEl) {
+      return;
+    }
+    (graphEl.addEventListener as any)(
       "graph-changed",
       this.onGraphVersionChanged.bind(this)
     );
@@ -65,9 +71,6 @@ export class BigastMultiformatClock extends LitElement {
     );
   }
 
-  /**
-   * Implement `render` to define a template for your element.
-   */
   render() {
     if (this.format == "timeOfDay") {
       return html`
