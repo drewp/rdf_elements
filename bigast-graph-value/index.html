@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>graph-value demo</h1>
+    <script type="module" src="./build/demo.js"></script>
+    <style>
+      bigast-graph-value {
+        border: 2px solid black;
+        padding: 10px;
+        display: block;
+        margin: 10px;
+      }
+    </style>
+    <dom-bind>
+      <template>
+        <streamed-graph url="http://bang:9075/graph/events"></streamed-graph>
+
+        <bigast-graph-value
+          subj="http://projects.bigasterisk.com/device/environment"
+          pred="http://projects.bigasterisk.com/room/localTimeToMinute"
+          label="Time"
+        ></bigast-graph-value>
+
+        <bigast-graph-value
+          subj="http://projects.bigasterisk.com/device/environment"
+          pred="http://example.com/notHere"
+          label="Missing thing"
+        ></bigast-graph-value>
+      </template>
+    </dom-bind>
+  </body>
+</html>
