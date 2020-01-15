@@ -96,26 +96,3 @@ export class BigastGraphValue extends LitElement {
     `;
   }
 }
-
-//         or
-
-//         Current power demand: [[_value]] W
-//         </template>
-//         <script>
-//          Polymer({
-//            is: "bigast-house-power",
-//            properties: {
-//              graph: { type: Object, notify: true, observer: 'onGraphChange'},
-//              _value: { type: String },
-//            },
-//            onGraphChange: function(graph) {
-//              if (!graph.graph) return;
-//              var env = graph.graph.store.rdf;
-//              graph.graph.quadStore.quads(
-//                {},
-//                function(quad) {
-//                  if (quad.subject.equals(env.createNamedNode(
-//                    'http://projects.bigasterisk.com/room/housePower')) &&
-//                      quad.predicate.equals(env.createNamedNode(
-//                        'http://projects.bigasterisk.com/room/instantDemandWatts'))) {
-//                    this._value = quad.object.valueOf();
