@@ -1,6 +1,7 @@
 {
   "name": "bigast-multiformat-clock",
   "version": "0.0.1",
+  "license": "MIT",
   "types": "build/index.d.ts",
   "module": "build/lib.bundle",
   "scripts": {
