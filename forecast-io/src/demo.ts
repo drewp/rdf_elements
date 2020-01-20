@@ -1,0 +1,1 @@
+export { ForecastIo } from './index'; 
