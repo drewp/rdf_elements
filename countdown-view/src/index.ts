@@ -151,7 +151,6 @@ export class CountdownView extends LitElement {
           ${this.rows.map(renderRow)}
         </ul>
       </div>
-      >
     `;
   }
 }
