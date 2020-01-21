@@ -2,3 +2,5 @@ node_modules
 build
 coverage
 .vscode/settings.json
+bigast-calendar/src/private_feeds.ts
+
